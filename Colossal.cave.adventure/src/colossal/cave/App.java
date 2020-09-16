@@ -2,6 +2,8 @@ package colossal.cave;
 
 import java.util.Scanner;
 
+import colossal.cave.player.Player;
+
 public class App {
 	
 
