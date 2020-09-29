@@ -1,17 +1,19 @@
 package colossal.cave;
 
-import colossal.cave.gameplay.Game;
+import colossal.cave.items.LightSaber;
+import colossal.cave.player.Player;
 
 public class App {
 
 	public static void main(String[] args) {
+		Player player = new Player();
+		player.playerIntro();
+		String saberChoice = null;
+		LightSaber lightsaber = new LightSaber(saberChoice);
 
-		System.out.println(
-				"Welcome to our Colossal Cave Adventure (Star Wars edition). \nUse HELP command to get all available commands\n"
-						+ "In a galaxy far far away you just landed on Naboo....\n");
+		lightsaber.saberColor();
+		player.gamePlay();
 
-		Game g = new Game();
-		g.runGame();
 	}
 
 }
