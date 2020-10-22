@@ -18,7 +18,9 @@ public class Items {
 		this.hpChange = hpChange;
 		this.flavorText= text;
 		this.location = location;
+		
 	}
+	//trying to upload
 	
 
 }
