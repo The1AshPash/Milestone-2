@@ -52,14 +52,37 @@ public class Player {
 		planets.put(6, new Planet(6, "You are now on the planet of Saleucami"));
 		planets.put(7, new Planet(7, "You are now on the planet of Mustafar"));
 
-		planets.get(1).move("West", 1);
+		planets.get(0).move("East", 1);
+		planets.get(0).move("Quit", 0);
+
+		planets.get(1).move("West", 0);
 		planets.get(1).move("North", 3);
 		planets.get(1).move("East", 2);
 		planets.get(1).move("South", 4);
+		planets.get(1).move("Quit", 0);
 
 		planets.get(2).move("South", 5);
 		planets.get(2).move("West", 4);
 		planets.get(2).move("Quit", 0);
+
+		planets.get(3).move("North", 5);
+		planets.get(3).move("South", 1);
+		planets.get(3).move("East", 7);
+		planets.get(3).move("Quit", 0);
+
+		planets.get(4).move("North", 1);
+		planets.get(4).move("East", 2);
+		planets.get(4).move("West", 6);
+		planets.get(4).move("Quit", 0);
+
+		planets.get(5).move("North", 2);
+		planets.get(5).move("Quit", 0);
+
+		planets.get(6).move("East", 4);
+		planets.get(6).move("Quit", 0);
+
+		planets.get(7).move("West", 3);
+		planets.get(7).move("Quit", 0);
 
 		System.out.println(
 				"You just won the Battle of Battle of Coruscant. Now you must choose a location to go (North, South, East, or West)");
