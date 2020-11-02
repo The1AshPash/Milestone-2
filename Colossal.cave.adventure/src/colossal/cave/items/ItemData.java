@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class ItemData {
-	private Map<String, Item> item;
+	private static Map<String, Item> item;
 
     public void init(){
         item = new HashMap<>();
@@ -32,7 +32,7 @@ public final class ItemData {
 		item.put("Evidence of a Sith amongst the Jedi", new Item(2000, 0, "Trechery has a high price"));
 	}
    
-    public Item getItemData(String itemName){
+    public static Item getItemData(String itemName){
         return item.get(itemName);
     }
 

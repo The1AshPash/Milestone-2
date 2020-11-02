@@ -6,6 +6,7 @@ import java.util.*;
 
 
 import colossal.cave.items.Item;
+import colossal.cave.items.ItemData;
 
 public class Planet {
 
@@ -51,6 +52,23 @@ public class Planet {
 		} 
 		return returnString;
 	}	
-	
+	/*public Item[] lootItems(){
+		Item[] returnItems = new Item[inventory.size()];
+		int i = 0;
+		for(String item : inventory){
+		returnItems[i]= ItemData.getItemData(item);	
+		i++;	
+		}
+		inventory.clear();
+		return returnItems;
+	}*/
+	public void lootItems(ArrayList<String> playerInv){
+		ListIterator<String> planetInvIt= inventory.listIterator();
+		while(planetInvIt.hasNext()){
+		playerInv.add(planetInvIt.next());
+		planetInvIt.remove();	
+		}
+
+	}
 	
 }

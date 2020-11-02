@@ -8,6 +8,7 @@ import java.util.Scanner;
 import colossal.cave.gameplay.Game;
 import colossal.cave.items.LightSaber;
 import colossal.cave.planet.Planet;
+import colossal.cave.items.Item;
 
 public class Player {
 
@@ -18,10 +19,12 @@ public class Player {
 	private final int DAMAGE = 15;
 	private final String STARTING_LOCATION = "Naboo";
 	private Planet planet;
+	private ArrayList<String> playerInventory;
 
 	public Player() {
 		this.hp = hp;
 		this.lightsaver = lightsaver;
+		playerInventory = new ArrayList<>();
 
 	}
 
@@ -92,31 +95,39 @@ public class Player {
 			if (i == -1)
 				break;
 			System.out.println(planets.get(i).getDescription());
-			System.out.println("You find: " + planets.get(i).getAllItems());
+			String planetItems = planets.get(i).getAllItems();
+			System.out.println(planetItems == "" ? "The place has been picked clean" : "You find: " + planetItems);
 
 			Map<String, Integer> moves = planets.get(i).getMoves();
-			System.out.println("Available moves are: Enter a command below");
+			System.out.println("Available commands are: Enter a command below");
 			for (String move : moves.keySet()) {
 				System.out.println(move + " ");
 
 			}
 			System.out.println();
-			String direction = scanner.nextLine().toUpperCase();
-			if (direction.length() > 1) {
-				String[] words = direction.split(" ");
+			String inputCommand = scanner.nextLine().toUpperCase();
+			if (inputCommand.length() > 1) {
+				String[] words = inputCommand.split(" ");
 				for (String word : words) {
-					if (command.containsKey(word)) {
-						direction = command.get(word);
+					if(word.equals("LOOT")){
+						planets.get(i).lootItems(playerInventory);
+						System.out.println("You add the items to your stash.");
+						
+					}
+					else if (command.containsKey(word)) {
+						inputCommand = command.get(word);
+						if(moves.containsKey(inputCommand)) {
+							i = moves.get(inputCommand);
+			
+						} 
+						else {
+							System.out.println("Direction is not available");
+						}
 						break;
 					}
 				}
 			}
-			if (moves.containsKey(direction)) {
-				i = moves.get(direction);
-
-			} else {
-				System.out.println("Direction is not available");
-			}
+		
 		}
 
 	}
