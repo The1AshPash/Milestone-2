@@ -8,7 +8,7 @@ import java.util.Scanner;
 import colossal.cave.gameplay.Game;
 import colossal.cave.items.LightSaber;
 import colossal.cave.planet.Planet;
-import colossal.cave.items.Item;
+import colossal.cave.items.ItemData;
 
 public class Player {
 
@@ -20,6 +20,7 @@ public class Player {
 	private final String STARTING_LOCATION = "Naboo";
 	private Planet planet;
 	private ArrayList<String> playerInventory;
+	private int score;
 
 	public Player() {
 		this.hp = hp;
@@ -97,9 +98,12 @@ public class Player {
 			System.out.println(planets.get(i).getDescription());
 			String planetItems = planets.get(i).getAllItems();
 			System.out.println(planetItems == "" ? "The place has been picked clean" : "You find: " + planetItems);
+			if (planetItems != ""){
+				System.out.println("Type \"Loot\" to take available items");
+			}
 
 			Map<String, Integer> moves = planets.get(i).getMoves();
-			System.out.println("Available commands are: Enter a command below");
+			System.out.println("Available commands are: ");
 			for (String move : moves.keySet()) {
 				System.out.println(move + " ");
 
@@ -112,6 +116,11 @@ public class Player {
 					if(word.equals("LOOT")){
 						planets.get(i).lootItems(playerInventory);
 						System.out.println("You add the items to your stash.");
+						System.out.println("Current Score: " + getScore());
+						
+					}
+					else if(word.equals("SECRET")){
+						ItemData.getAllFlavorText();
 						
 					}
 					else if (command.containsKey(word)) {
@@ -130,5 +139,12 @@ public class Player {
 		
 		}
 
+	}
+	public int getScore(){
+		int score = 0;
+		for (String itemName : playerInventory) {
+			score += ItemData.getItemData(itemName).score;
+		}
+		return score;
 	}
 }

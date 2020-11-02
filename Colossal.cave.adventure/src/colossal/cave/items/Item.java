@@ -7,7 +7,7 @@ public class Item {
 	
 	public int score;
 	private int hpChange;
-	private String flavorText;
+	public String flavorText;
 	
 	
 	public Item(int score, int hpChange, String text){

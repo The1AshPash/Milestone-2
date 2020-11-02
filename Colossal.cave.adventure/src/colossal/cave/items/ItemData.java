@@ -2,17 +2,18 @@ package colossal.cave.items;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.*;
 
 public final class ItemData {
-	private static Map<String, Item> item;
-
-    public void init(){
+    private static Map<String, Item> item;
+    
+    public static void init(){
         item = new HashMap<>();
         initializeItemData();
 
     }
 
-    public void initializeItemData() {
+    private static void initializeItemData() {
 		item.put("Medkit", new Item(10, 20, "It's small but it heals well"));
 		item.put("Medpack", new Item(40, 100, "A proper Medpack, healing even the most grevious of wounds"));
 		item.put("Datapad", new Item(700, 0, "A datapad with information on the Jedi"));
@@ -36,4 +37,14 @@ public final class ItemData {
         return item.get(itemName);
     }
 
+    public static void getAllFlavorText(){
+        System.out.println("You found the secret list of item descriptions:");
+        Iterator<Map.Entry<String, Item>> it = item.entrySet().iterator();
+            while(it.hasNext()) {
+                Map.Entry<String, Item> itemData = it.next();
+                System.out.println(itemData.getKey() +" - " + itemData.getValue().flavorText);
+
+    }
+
+}
 }

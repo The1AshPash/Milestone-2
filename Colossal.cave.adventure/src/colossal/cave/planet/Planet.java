@@ -52,16 +52,6 @@ public class Planet {
 		} 
 		return returnString;
 	}	
-	/*public Item[] lootItems(){
-		Item[] returnItems = new Item[inventory.size()];
-		int i = 0;
-		for(String item : inventory){
-		returnItems[i]= ItemData.getItemData(item);	
-		i++;	
-		}
-		inventory.clear();
-		return returnItems;
-	}*/
 	public void lootItems(ArrayList<String> playerInv){
 		ListIterator<String> planetInvIt= inventory.listIterator();
 		while(planetInvIt.hasNext()){
