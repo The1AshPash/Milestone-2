@@ -48,3 +48,4 @@ public final class ItemData {
 //Bullet point 3 is in Planet, Bullet point 5 is in Player(middle of the code), Bullet point 6 is in Player (bottom)
 }
 }
+//Programmed by Ashley Milone

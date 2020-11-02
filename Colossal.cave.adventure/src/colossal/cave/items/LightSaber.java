@@ -18,7 +18,7 @@ public class LightSaber {
 
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("Which color lightsaber do you want (Red, Green, Blue)?");
+		System.out.println("In the carnage you find three lightsabers, but you can only keep one. Which color lightsaber do you want (Red, Green, Blue)?");
 		String saberChoice = scanner.nextLine();
 		if (saberChoice.equals("Red")) {
 			System.out.println("You chose the Red lightsaber");
@@ -42,3 +42,4 @@ public class LightSaber {
 	}
 
 }
+// Story made by Ashley Milone

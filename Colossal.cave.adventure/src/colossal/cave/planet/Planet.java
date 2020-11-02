@@ -63,3 +63,4 @@ public class Planet {
 	}
 	
 }
+// Item implimentation and bug fixes by Ashley Milone

@@ -32,14 +32,14 @@ public class Player {
 	public void playerIntro() {
 		Game game = new Game();
 		Scanner s = new Scanner(System.in);
-		System.out.println("Do you want to play colossal cave adventure? (Star Wars edition?) (Yes, No)");
+		System.out.println("A long time ago in a galaxy far, far away... You come uppon the reminances of battles between Jedi and Sith. Do you wish to embark on the Colosal Space Adventure? (Yes, No)");
 		String userInput = s.nextLine();
 		if (userInput.equals("Yes")) {
-			System.out.println("You chose to play the game!");
+			System.out.println("You press on!");
 //			game.runGame();
 
 		} else if (userInput.equals("No")) {
-			System.out.println("You're missing out");
+			System.out.println("You back away, thus ends your story.");
 			game.GameOver(0);
 		}
 
@@ -48,15 +48,15 @@ public class Player {
 	public void gamePlay() {
 
 		Scanner scanner = new Scanner(System.in);
-		planets.put(0, new Planet(0, "You are now on the planet of Coruscant", new ArrayList<String>(Arrays.asList("Medkit","Thermaslice"))));
-		planets.put(1, new Planet(1, "You are now on the planet of Utapau", new ArrayList<String>(Arrays.asList("Medkit","Thermaslice"))));
-		planets.put(2, new Planet(2, "You are now on the planet of Mygeeto", new ArrayList<String>(Arrays.asList("Medkit","Thermaslice"))));
-		planets.put(3, new Planet(3, "You are now on the planet of Felucia", new ArrayList<String>(Arrays.asList("Medkit","Thermaslice"))));
-		planets.put(4, new Planet(4, "You are now on the planet of Kashyyyk", new ArrayList<String>(Arrays.asList("Medkit","Thermaslice"))));
-		planets.put(5, new Planet(5, "You are now on the planet of Cato Neimoidia", new ArrayList<String>(Arrays.asList("Medkit","Thermaslice"))));
-		planets.put(6, new Planet(6, "You are now on the planet of Saleucami", new ArrayList<String>(Arrays.asList("Medkit","Thermaslice"))));
-		planets.put(7, new Planet(7, "You are now on the planet of Mustafar", new ArrayList<String>(Arrays.asList("Medkit","Thermaslice"))));
-
+		planets.put(0, new Planet(0, "You are now on the planet of Coruscant", new ArrayList<String>(Arrays.asList("Evidence of fight", "Evidence of Count Dooku's Killer"))));
+		planets.put(1, new Planet(1, "You are now on the planet of Utapau", new ArrayList<String>(Arrays.asList("Medkit","Evidence of General Grevious's Killer"))));
+		planets.put(2, new Planet(2, "You are now on the planet of Mygeeto", new ArrayList<String>(Arrays.asList("Medpack","Deathsticks","VIP Comcode List"))));
+		planets.put(3, new Planet(3, "You are now on the planet of Felucia", new ArrayList<String>(Arrays.asList("Datapad","Holograph of Sith activity"))));
+		planets.put(4, new Planet(4, "You are now on the planet of Kashyyyk", new ArrayList<String>(Arrays.asList("Medkit", "Holograph of Jedi activity"))));
+		planets.put(5, new Planet(5, "You are now on the planet of Cato Neimoidia", new ArrayList<String>(Arrays.asList("Evidence of Jedi passage","Chiss Pyrowall Cracker","Chiss Comlink Cracker"))));
+		planets.put(6, new Planet(6, "You are now on the planet of Saleucami", new ArrayList<String>(Arrays.asList("Evidence of a Sith amongst the Jedi","Incriminating Holograph"))));
+		planets.put(7, new Planet(7, "You are now on the planet of Mustafar", new ArrayList<String>(Arrays.asList("Evidence of Sith passage","Thermaslice"))));
+		//Brendan Daly did the following:
 		planets.get(0).addDirection("East", 1);
 
 		planets.get(1).addDirection("West", 0);
@@ -80,9 +80,9 @@ public class Player {
 		planets.get(6).addDirection("East", 4);
 
 		planets.get(7).addDirection("West", 3);
-
+		//Brendan's contribution stops here.
 		System.out.println(
-				"You just won the Battle of Battle of Coruscant. Now you must choose a location to go (North, South, East, or West)");
+				"You exit the reminances of the Battle of Coruscant. Now you must choose a location to go (North, South, East, or West)");
 
 		Map<String, String> command = new HashMap<>();
 		command.put("QUIT", "Quit");
@@ -149,3 +149,4 @@ public class Player {
 		return score;
 	}
 }
+//Item and Score implimentation, bug fixing, and story by Ashley Milone
