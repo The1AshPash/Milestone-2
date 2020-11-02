@@ -149,4 +149,4 @@ public class Player {
 		return score;
 	}
 }
-//Item and Score implimentation, bug fixing, and story by Ashley Milone
+//Item and Score implimentation, bug fixing, and lore by Ashley Milone

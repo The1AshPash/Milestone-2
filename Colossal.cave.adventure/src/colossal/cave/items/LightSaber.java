@@ -42,4 +42,4 @@ public class LightSaber {
 	}
 
 }
-// Story made by Ashley Milone
+// Lore made by Ashley Milone

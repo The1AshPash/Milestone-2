@@ -6,7 +6,7 @@ import java.util.List;
 public class ScorableItems {
 	
 	public int score;
-	private int hpChange;
+	private int hpChange;// not implimented but here for future groups
 	public String flavorText;
 	
 	
