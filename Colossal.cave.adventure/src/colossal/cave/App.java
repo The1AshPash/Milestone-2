@@ -9,6 +9,7 @@ public class App {
 		Player player = new Player();
 		player.playerIntro();
 		String saberChoice = null;
+		ItemData.init();
 		LightSaber lightsaber = new LightSaber(saberChoice);
 
 		lightsaber.saberColor();

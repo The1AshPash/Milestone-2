@@ -26,12 +26,10 @@ public static class ItemData {
 		item.put("Evidence of Count Dooku's Killer", new Items(13, 2000, 0, "The wreckage of battle hide clues to who the perpitrators are", "TBD"));
 		item.put("Evidence of General Grevious's Killer", new Items(14, 2000, 0, "The Saber-burnt remains of the General hide clues to his undoing ", "TBD"));
 		item.put("Evidence of a Sith amongst the Jedi", new Items(15, 2000, 0, "Trechery has a high price", "TBD"));
-		
-		
-		
-		
 	}
    
-
+    public Items getItemData(String itemName){
+        return item;//need to finish
+    }
 
 }
