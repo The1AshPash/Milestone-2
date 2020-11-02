@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.*;
 
 
-import colossal.cave.items.Item;
+import colossal.cave.items.ScorableItems;
 import colossal.cave.items.ItemData;
 
 public class Planet {
@@ -52,6 +52,7 @@ public class Planet {
 		} 
 		return returnString;
 	}	
+	//Bullet point 3
 	public void lootItems(ArrayList<String> playerInv){
 		ListIterator<String> planetInvIt= inventory.listIterator();
 		while(planetInvIt.hasNext()){

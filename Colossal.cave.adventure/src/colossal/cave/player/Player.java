@@ -114,7 +114,7 @@ public class Player {
 				String[] words = inputCommand.split(" ");
 				for (String word : words) {
 					if(word.equals("LOOT")){
-						planets.get(i).lootItems(playerInventory);
+						planets.get(i).lootItems(playerInventory); //Bullet point 5
 						System.out.println("You add the items to your stash.");
 						System.out.println("Current Score: " + getScore());
 						
@@ -140,6 +140,7 @@ public class Player {
 		}
 
 	}
+	//Bullet point 6
 	public int getScore(){
 		int score = 0;
 		for (String itemName : playerInventory) {

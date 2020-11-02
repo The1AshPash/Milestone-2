@@ -2,22 +2,18 @@ package colossal.cave.items;
 
 import java.util.ArrayList;
 import java.util.List;
-
-public class Item {
+// note the requirements are met and will be notated with comments throughout the code(mostly in ItemData). 
+public class ScorableItems {
 	
 	public int score;
 	private int hpChange;
 	public String flavorText;
 	
 	
-	public Item(int score, int hpChange, String text){
+	public ScorableItems(int score, int hpChange, String text){
 		this.score = score;
 		this.hpChange = hpChange;
 		this.flavorText= text;
 		
 	}
-	//trying to upload again
-	
-	
-
 }
